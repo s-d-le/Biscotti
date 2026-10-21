@@ -61,8 +61,8 @@ A meeting made from an uploaded file must be visibly different from a live recor
 nobody mistakes it for something Biscotti captured:
 
 - **Meeting Detail:** an **"Imported audio"** pill (icon `square.and.arrow.down`, same
-  capsule style as `SourcePill`) in the meta line under the title, with the original
-  filename as a tooltip.
+  capsule style as `SourcePill`) in the meta line under the title, with a
+  tooltip ("Imported from an audio file"). The original filename isn't stored in v1.
 - **Sidebar / meeting list row:** the second line reads "Jun 9, 2026 · 34m · Imported".
 - **Transcript tab:** a one-line note at the top: "Transcribed from an imported audio file.
   Speaker labels come from voice analysis only."
