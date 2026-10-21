@@ -36,8 +36,8 @@ Changes are additive and bottom-up through the existing layers.
   so tests don't need real audio decoding for most cases.
 
 ## UI
-- `DesignSystem`: new `ImportedAudioPill` (modelled on `SourcePill`), used in Meeting Detail and the list row.
-- Read model: `isImported` derived from the audio role, exposed to the list and detail view models.
+- `DesignSystem`: new `ImportedAudioPill` (modelled on `SourcePill`) in the Meeting Detail meta line; the list row appends "· Imported" to its second line.
+- Read models: `MeetingSummary.isImported` / `MeetingDetailData.isImported`, derived from the audio role.
 - `AppShellUI`: toolbar `Import Audio` button, `.fileImporter`, `.onDrop` on the list,
   `File > Import Audio…` command in `BiscottiApp`.
 - `MeetingDetailUI`: playback already loads `[mic, system].compactMap` — verified to work

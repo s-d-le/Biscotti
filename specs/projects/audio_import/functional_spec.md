@@ -63,7 +63,7 @@ nobody mistakes it for something Biscotti captured:
 - **Meeting Detail:** an **"Imported audio"** pill (icon `square.and.arrow.down`, same
   capsule style as `SourcePill`) in the meta line under the title, with the original
   filename as a tooltip.
-- **Sidebar / meeting list row:** the same small icon next to the date.
+- **Sidebar / meeting list row:** the second line reads "Jun 9, 2026 · 34m · Imported".
 - **Transcript tab:** a one-line note at the top: "Transcribed from an imported audio file.
   Speaker labels come from voice analysis only."
 - **Recording-only UI** (live-recording notes, "You" labelling) is hidden for imported meetings.
