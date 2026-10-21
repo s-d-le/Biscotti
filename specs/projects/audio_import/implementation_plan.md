@@ -5,7 +5,9 @@ status: draft
 # Implementation Plan: Audio Import
 
 - [x] **Phase 1 — Single-file transcription.** `AudioRole.imported`, `MeetingAudio`,
-  optional `systemPath` through XPC/engine/Transcriber/`Transcribing`; fakes + tests.
+  optional `systemPath` through XPC/engine/Transcriber/`Transcribing`; `DataStore.audioPaths(meetingID:)` and
+  `TranscriptionService.resolveAudioPaths(meetingID:)` return the lone `.imported` file as `mic` (no `system`) so
+  imported-only meetings resolve; fakes + tests.
 - [x] **Phase 2 — AppCore `importAudio`.** Validator, copy, meeting creation, auto
   transcribe + enhance chain, failure cleanup; tests.
 - [x] **Phase 3 — UI.** Toolbar button, File menu command, drag-and-drop, alerts,

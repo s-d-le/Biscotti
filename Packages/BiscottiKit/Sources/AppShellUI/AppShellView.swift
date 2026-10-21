@@ -110,7 +110,7 @@ public struct AppShellView: View {
             }
         }
         // Import audio: toolbar button and File > Import Audio… both flip
-        // `showAudioImporter`; dropping audio files on the window imports them too.
+        // `showAudioImporter`; dropping files on the window imports them too.
         .fileImporter(
             isPresented: $showAudioImporter,
             allowedContentTypes: [.audio],
@@ -124,11 +124,11 @@ public struct AppShellView: View {
         }
         .dropDestination(for: URL.self) { urls, _ in
             guard viewModel.canImportAudio else { return false }
-            let audio = urls.filter {
-                UTType(filenameExtension: $0.pathExtension)?.conforms(to: .audio) ?? false
-            }
-            guard !audio.isEmpty else { return false }
-            Task { await viewModel.importAudio(urls: audio) }
+            // Pass every dropped file: AppCore validates each one, so rejected
+            // files are named in the alert and valid ones still import.
+            let files = urls.filter(\.isFileURL)
+            guard !files.isEmpty else { return false }
+            Task { await viewModel.importAudio(urls: files) }
             return true
         }
         .alert(

@@ -21,7 +21,7 @@ bounded; transcription of a live recording starts right after stop).
 
 Audio-only. Accepted: `.mp3 .m4a .aac .wav .aiff/.aif .caf .flac`. Detection is by
 `UTType` conformance to `.audio`, then confirmed by opening with `AVAudioFile`
-(or `AVAsset` for container formats) and requiring ≥ 1 audio track and duration > 0.
+(or `AVAsset` for container formats) and requiring ≥ 1 audio track, **no video tracks**, and duration > 0.
 
 Rejected with an alert (nothing is created): unreadable/corrupt file, no audio
 track, zero duration, or video files (v1 is sound-only; video is a follow-up).
